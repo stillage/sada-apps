@@ -29,6 +29,7 @@ import 'package:launcher_apps/widget/grid_app.dart';
 import 'package:launcher_apps/widget/header_section.dart';
 import 'package:marquee/marquee.dart';
 import 'package:intl/intl.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import 'api/app_list.dart';
@@ -236,16 +237,16 @@ class _HomeState extends State<Home> {
           IconButton(
             icon: isLoading
                 ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    ),
-                  )
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+            )
                 : const Icon(
-                    Icons.refresh,
-                    color: Colors.white,
-                  ),
+              Icons.refresh,
+              color: Colors.white,
+            ),
             onPressed: () {
               setState(() {
                 _getDataGSPrice();
@@ -290,6 +291,7 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
+          const SizedBox(height: 10),
           Expanded(
             flex: 6,
             child: CarouselSlider(
